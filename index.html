@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coding Quiz</title>
+
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+
+  <body>
+
+    <div class="timer">Time: <span id="time">60</span></div>
+
+   
+      <div id="start-screen" class="start">
+        <h1>Coding Quiz Challenge</h1>
+        <p>
+          Answer all the questions and see how you do
+        </p>
+        <button id="start">Start</button>
+      </div>
+
+      <div id="questions-div" class="hide">
+        <h2 id="title"></h2>
+        <div id="options" class="options"></div>
+      </div>
+
+      <div id="end-screen" class="hide">
+        <h2>Finished</h2>
+        <p>Your final score: <span id="final-score"></span>.</p>
+        <p>
+          Enter Name: <input type="text" id="initials" max="3" />
+          <button id="submit">Submit!</button>
+        </p>
+      </div>
+
+    
+
+    <script src="./assets/script.js"></script>
+  </body>
+</html>
