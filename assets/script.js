@@ -34,4 +34,22 @@ var quizQuestions = [
         clearInterval(timeInterval)
     }
     },1000)
+
+    startScreen.setAttribute("class", "hide")
+    questionsDiv.removeAttribute("class", "hide")
+    //run function that displays questions
+    startQuestions()
   })
+
+  //create functions to iterate over questions array and display appropriate text and title options divs
+  function startQuestions(){
+    var currentQuestion = quizQuestions[questionIndex]
+    title.textContent = currentQuestion.title
+    currentQuestion.choices.forEach(function(choice){
+        var optionButton = document.createElement("button")
+        optionButton.textContent = choice
+        optionButton.setAttribute("value", choice)
+        //add click event to the value weight against correct answer
+        options.append(optionButton)
+    })
+  }
