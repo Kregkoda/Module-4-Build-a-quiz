@@ -1,4 +1,5 @@
 var time = document.getElementById("time");
+var timer = document.getElementById("timer");
 var startScreen = document.getElementById("start-screen");
 var start = document.getElementById("start");
 var questionsDiv = document.getElementById("questions-div");
@@ -53,3 +54,4 @@ var quizQuestions = [
         options.append(optionButton)
     })
   }
+
