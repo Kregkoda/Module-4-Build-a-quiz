@@ -43,15 +43,21 @@ var quizQuestions = [
   })
 
   //create functions to iterate over questions array and display appropriate text and title options divs
-  function startQuestions(){
-    var currentQuestion = quizQuestions[questionIndex]
-    title.textContent = currentQuestion.title
-    currentQuestion.choices.forEach(function(choice){
-        var optionButton = document.createElement("button")
-        optionButton.textContent = choice
-        optionButton.setAttribute("value", choice)
-        //add click event to the value weight against correct answer
-        options.append(optionButton)
-    })
-  }
+  function startQuestions() {
+  var currentQuestion = quizQuestions[questionIndex];
+  title.textContent = currentQuestion.title;
+  currentQuestion.choices.forEach(function(choice) {
+    var optionButton = document.createElement("button");
+    optionButton.textContent = choice;
+    optionButton.setAttribute("value", choice);
+    //add click event to the value weight against correct answer
+    optionButton.addEventListener("click", function() {
+      if (choice != currentQuestion.answer) {
+        seconds -= 5;
+      }
+      time.textContent = seconds;
+    });
+    options.append(optionButton);
+  });
+}
 
