@@ -58,6 +58,25 @@ var quizQuestions = [
       time.textContent = seconds;
     });
     options.append(optionButton);
-  });
-}
+  })
+};
+/*ASK HOW TO PREVENT THE WRONG ANSWERS FROM SUBTRACTING PAST 0 */
+
+
+if (seconds <= 0) {
+    //game over
+    clearInterval(timeInterval);
+    endScreen.removeAttribute("class", "hide");
+
+    //get initials from user
+    var initials = prompt("Enter your initials:");
+
+    //get score
+    var score = seconds * quizQuestions.length;
+
+    //save initials and score to local storage
+    localStorage.setItem("initials", initials);
+    localStorage.setItem("score", score);
+  }
+
 
